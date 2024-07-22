@@ -125,14 +125,16 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
 }   
-	    -->
+	    
 	    #imageContainer, #dictionaryImageContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+}   
+	    --> 
 
-#imageContainer img, #dictionaryImageContainer img {
+<!-- Flexbox
+	    #imageContainer img, #dictionaryImageContainer img {
     margin: 10px;
     max-width: calc(100% / 3 - 20px); /* Adjust the number of images per row */
     height: auto;
@@ -146,7 +148,31 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
+	    -->
+
+	    #imageContainer img, #dictionaryImageContainer img {
+    margin: 10px;
+    width: 100%; /* Adjusts image width to its container */
+    max-width: 100%; /* Prevents the image from exceeding its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 600px) {
+    #imageContainer img, #dictionaryImageContainer img {
+        max-width: 80%; /* Adjust the max-width for smaller screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    #imageContainer img, #dictionaryImageContainer img {
+        max-width: 90%; /* Adjust the max-width for medium-sized screens */
+    }
+}
+
+	    
 	    
         #score, #review {
             font-size: 2rem;
